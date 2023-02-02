@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  mysql:
+    image: mariadb
+    env_file:
+      - .env
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+    ports:
+      - $MYSQL_PORT:$MYSQL_PORT
+    restart: always
+    volumes:
+      - mysql_database:/var/lib/mysql
+
+volumes:
+  mysql_database:
