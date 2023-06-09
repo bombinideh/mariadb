@@ -10,7 +10,7 @@ services:
       options:
         max-size: 10m
     ports:
-      - $MYSQL_PORT:$MYSQL_PORT
+      - $MARIADB_PORT:$MARIADB_PORT
     restart: always
     volumes:
       - mariadb_database:/var/lib/mysql
